@@ -1,0 +1,71 @@
+#include <windows.h>
+#include "resource.h"
+
+// Win32 application icon.
+IDI_APPICON             ICON                    "Application.ico"
+
+// Our main menu.
+IDR_MAINMENU MENU
+BEGIN
+    POPUP "&File"
+    BEGIN
+        MENUITEM "E&xit",                       ID_FILE_EXIT
+    END
+    POPUP "&Help"
+    BEGIN
+        MENUITEM "&About",                      ID_HELP_ABOUT
+    END
+END
+
+// Application manifest.
+CREATEPROCESS_MANIFEST_RESOURCE_ID RT_MANIFEST "Application.manifest"
+
+// Executable version information.
+1 VERSIONINFO
+ FILEVERSION 1,0,0,2
+ PRODUCTVERSION 1,0,0,2
+ FILEFLAGSMASK 0x17L
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "080904b0"
+        BEGIN
+            VALUE "CompanyName", "BSKYB"
+            VALUE "FileDescription", "Generic UI"
+            VALUE "FileVersion", "1, 0, 0, 0"
+            VALUE "InternalName", "GenUI"
+            VALUE "LegalCopyright", "©2014 Kumaran Devaneson"
+            VALUE "OriginalFilename", "GenUI"
+            VALUE "ProductName", "GenUI"
+            VALUE "ProductVersion", "1, 0, 0, 2"
+        END
+    END
+END
+
+// Our "about" dialog.
+IDD_ABOUTDIALOG DIALOGEX 0, 0, 247, 67
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "About"
+FONT 8, "Arial", 400, 0, 0x1
+BEGIN
+    ICON            IDI_APPICON,IDC_STATIC,7,7,220,220
+    LTEXT           "Generic UI v1.0",IDC_STATIC,34,7,186,8
+    LTEXT           "©2014 BSkyB",IDC_STATIC,34,17,168,8
+    LTEXT           "Written By: Kumaran Devaneson",IDC_STATIC,34,27,180,8
+    LTEXT           "kumaran.devaneson@bksyb.com",IDC_STATIC,34,37,180,8
+    DEFPUSHBUTTON   "OK",IDOK,90,50,50,14,WS_GROUP
+END
+
+// Our accelerators.
+IDR_ACCELERATOR ACCELERATORS
+BEGIN
+    "A",            ID_HELP_ABOUT,          VIRTKEY, ALT, NOINVERT
+END

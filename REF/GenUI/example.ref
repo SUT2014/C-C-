@@ -1,0 +1,8 @@
+CMGR /apps/cmgr/tools/control.py delete_campaigns
+10.65.142.71 CNPP ./restart.sh
+PMGR /apps/cmgr/tools/control.py delete_xml_profiles
+PMGR /apps/cmgr/tools/control.py delete_xml_attributes
+CMGR /apps/cmgr/tools/control.py delete_xml_attributes
+EMMG /apps/cmgr/tools/control.py delete_xml_attributes
+SLEEP 10
+

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CATALOG>
+    <TITLE>Example Tool</TITLE>
+	<IP>10.65.142.71</IP>
+	<COMMAND>
+		<NAME>Setup Example CA+HE Stream</NAME>
+		<DESCRIPTION>Setup the stream for testing Example. Sets up both CA and HE attributes, profiles and Campaigns</DESCRIPTION>
+		<COMMAND_WORD>SCRIPT Example.ref</COMMAND_WORD>
+		<CONFIRM>Warning !!! This will reset the stream..Continue?</CONFIRM>		
+	</COMMAND>
+	<COMMAND>
+		<NAME>Setup HE only Example Stream</NAME>
+		<DESCRIPTION>Setup the stream for testing Example. Sets up HE only attributes, profiles and Campaigns</DESCRIPTION>
+		<COMMAND_WORD>SCRIPT Example_he_only.ref</COMMAND_WORD>
+		<CONFIRM>Warning !!! This will reset the stream..Continue?</CONFIRM>		
+	</COMMAND>
+	<COMMAND>
+		<NAME>Send PAM Messages</NAME>
+		<DESCRIPTION>Send PAM Messages </DESCRIPTION>
+		<COMMAND_WORD>PMGR ./pam.py</COMMAND_WORD>
+		<PARAMETER>
+		    <POSITION>1</POSITION>
+			<NAME>Start Sub ID</NAME>
+		</PARAMETER>
+		<PARAMETER>
+		    <POSITION>2</POSITION>
+			<NAME>End Sub ID</NAME>
+		</PARAMETER>
+		<PARAMETER>
+		    <POSITION>3</POSITION>
+			<NAME>Attribute(s)</NAME>
+		</PARAMETER>
+		<PARAMETER>
+		    <POSITION>4</POSITION>
+			<NAME>Value(s)</NAME>
+		</PARAMETER>
+	</COMMAND>
+	<COMMAND>
+		<NAME>Read PAM Message</NAME>
+		<DESCRIPTION>Read PAM message content</DESCRIPTION>
+		<COMMAND_WORD>PMGR ./pam_get.py</COMMAND_WORD>
+		<PARAMETER>
+		    <POSITION>1</POSITION>
+			<NAME>Start Sub ID</NAME>
+		</PARAMETER>
+		<PARAMETER>
+		    <POSITION>2</POSITION>
+			<NAME>End Sub ID</NAME>
+		</PARAMETER>
+		<PARAMETER>
+		    <POSITION>3</POSITION>
+			<NAME>Attribute(s)</NAME>
+		</PARAMETER>
+	</COMMAND>
+		<COMMAND>
+		<NAME>PAM Version Test</NAME>
+		<DESCRIPTION>Send 15 PAMs with various attributes and values with 30 seconds delay between each</DESCRIPTION>
+		<COMMAND_WORD>SCRIPT pam_version.ref</COMMAND_WORD>
+		<PARAMETER>
+		    <POSITION>1</POSITION>
+			<NAME>Start Sub ID</NAME>
+		</PARAMETER>
+		<PARAMETER>
+		    <POSITION>2</POSITION>
+			<NAME>End Sub ID</NAME>
+		</PARAMETER>
+	</COMMAND>
+</CATALOG>
